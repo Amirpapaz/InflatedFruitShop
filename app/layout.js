@@ -1,14 +1,14 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Link from "next/link";
-import Header from "./Header";
+import { Inter } from "next/font/google"
+import "./globals.css"
+import Link from "next/link"
+import Header from "./Header"
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Fruit Shop",
   description: "Hyper inflated Fruit Store - best prices 2033",
-};
+}
 
 export default function RootLayout({ children }) {
   return (
@@ -26,7 +26,8 @@ export default function RootLayout({ children }) {
         <i className="fa-brands fa-instagram text-slate-700 hover:text-slate-500 cursor-pointer"></i>
      </Link> 
      </footer>
-    </body>
+    <div id="portal"></div>
+     </body>
     </html>
-  );
+  )
 }

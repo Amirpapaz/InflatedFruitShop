@@ -3,7 +3,7 @@ import useCart from "../(store)/store"
 
 export default function ProductPage(props){
     const {searchParams} = props
-    const {price_id} = props
+    const {price_id} = searchParams
     const product = useCart(state => state.product)
     const addItemToCart = useCart(state => state.addItemToCart)
     const {cost, productInfo, name, description} = product
@@ -15,7 +15,9 @@ export default function ProductPage(props){
     function handleAddToCart(){
         const newItem = {
             quantity: 1,
-            price_id: price_id
+            price_id,
+            name,
+            cost
         }
         addItemToCart({newItem})
     }
@@ -31,7 +33,7 @@ export default function ProductPage(props){
             <p className=" md:text-lg"> {cost/100} $</p>
         </div>
         <p className="text-lg flex-1"> {description} </p>
-        <button className="bg-slate-700 text-white hover:bg-slate-500 cursor-pointer ml-auto px-4 py-2"> Add to cart </button>
+        <button onClick={handleAddToCart} className="bg-slate-700 text-white hover:bg-slate-500 cursor-pointer ml-auto px-4 py-2"> Add to cart </button>
         </div> 
     </div> 
     </div>
