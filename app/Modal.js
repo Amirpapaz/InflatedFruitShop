@@ -48,7 +48,7 @@ export default function Modal(){
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-slate-300 w-2/3"> </div>
         </div>
         <div className="p-4 overflow-scroll flex-1 flex flex-col gap-4"> 
-            {(cartItems.length === 0) ? (<p> There is nothing in your cart :'( </p>) : (
+            {(cartItems.length === 0) ? (<p> There is nothing in your cart</p>) : (
                 <>
                 {cartItems.map((cartItem,itemIndex) => {
                    return (
